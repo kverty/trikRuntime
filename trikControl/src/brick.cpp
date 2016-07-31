@@ -426,6 +426,16 @@ void Brick::stopEventDevice(const QString &deviceFile)
 	}
 }
 
+void Brick::changeAttributeByPort(const QString &port, const QString &attributeName, const QString &newAttributeValue)
+{
+	mConfigurer.changeAttributeByPort(port, attributeName, newAttributeValue);
+}
+
+void Brick::generateConfigFile(const QString &fileName, const QString &dirPath) const
+{
+	mConfigurer.generateConfigFile(fileName, dirPath);
+}
+
 void Brick::shutdownDevice(const QString &port)
 {
 	const QString &deviceClass = mConfigurer.deviceClass(port);

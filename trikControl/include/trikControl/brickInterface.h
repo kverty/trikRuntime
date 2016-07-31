@@ -53,6 +53,11 @@ public:
 	/// Returns version of system configuration file.
 	virtual QString configVersion() const = 0;
 
+	virtual void changeAttributeByPort(const QString &port, const QString &attributeName,
+									   const QString &newAttributeValue) = 0;
+
+	virtual void generateConfigFile(const QString &fileName, const QString &dirPath) const = 0;
+
 public slots:
 	/// Configures given device on given port. Port must be listed in model-config.xml, device shall be listed
 	/// in system-config.xml, and device shall be able to be configured on a port (it is also described

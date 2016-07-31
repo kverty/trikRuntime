@@ -79,6 +79,11 @@ public:
 
 	QString configVersion() const override;
 
+	void changeAttributeByPort(const QString &port, const QString &attributeName,
+							   const QString &newAttributeValue) override;
+
+	void generateConfigFile(const QString &fileName, const QString &dirPath) const override;
+
 public slots:
 	void configure(const QString &portName, const QString &deviceName) override;
 
